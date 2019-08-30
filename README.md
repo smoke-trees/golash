@@ -6,7 +6,7 @@
 [![Actions Status](https://github.com/achhapolia10/golash/workflows/CI/badge.svg)](https://github.com/achhapolia10/golash/actions)
 [![codecov](https://codecov.io/gh/achhapolia10/golash/branch/master/graph/badge.svg)](https://codecov.io/gh/achhapolia10/golash/)
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
-
+[![CodeFactor](https://www.codefactor.io/repository/github/achhapolia10/golash/badge/master)](https://www.codefactor.io/repository/github/achhapolia10/golash/overview/master)
 
 ### What is Golash?
 
