@@ -25,4 +25,6 @@ jobs:
         fi
     - name: Test
       run: |
-        go test 
+        go test number
+        go test functions
+        go test dates
