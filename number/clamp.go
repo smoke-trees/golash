@@ -1,6 +1,11 @@
 package number
 
+import "reflect"
+
 func Clamp(n, l, u interface{}) interface{} {
+	if reflect.TypeOf(n) != reflect.TypeOf(l) || reflect.TypeOf(n) != reflect.TypeOf(u) {
+		panic("All arguments must be of the same type!")
+	}
 	switch n.(type) {
 	case uint8:
 		if n.(uint8) > u.(uint8) {
@@ -74,6 +79,16 @@ func Clamp(n, l, u interface{}) interface{} {
 			n = l
 		}
 		return n.(int64)
+
+	case uint:
+		if n.(uint) > u.(uint) {
+			n = u
+		}
+
+		if n.(uint) < l.(uint) {
+			n = l
+		}
+		return n.(uint)
 	case int:
 		if n.(int) > u.(int) {
 			n = u
@@ -102,5 +117,5 @@ func Clamp(n, l, u interface{}) interface{} {
 		}
 		return n.(float64)
 	}
-	panic("Invalid type!")
+	panic("Invalid type! The Clamp function accepts only numeric types.")
 }
