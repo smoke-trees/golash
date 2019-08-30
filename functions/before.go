@@ -16,7 +16,7 @@ func Before(f func(), n int) Befores {
 		return Befores{
 			f, n, 0,
 		}
-	 }
+	}
 	return Befores{
 		f, 1, 0,
 	}
