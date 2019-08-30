@@ -21,11 +21,12 @@ func TestDebounce(t *testing.T) {
 	df.Cancel()
 	df.Flush()
 	mux.Lock()
-	if i != 4 {
-		t.Log(i)
-		t.Fail()
-
+	if i == 4 || i==5{
+		mux.Unlock()
+		return
 	}
+	t.Log(i)
+	t.Fail()
 	mux.Unlock()
 }
 func increment(i *int) {
