@@ -79,6 +79,16 @@ func Clamp(n, l, u interface{}) interface{} {
 			n = l
 		}
 		return n.(int64)
+
+	case uint:
+		if n.(uint) > u.(uint) {
+			n = u
+		}
+
+		if n.(uint) < l.(uint) {
+			n = l
+		}
+		return n.(uint)
 	case int:
 		if n.(int) > u.(int) {
 			n = u
