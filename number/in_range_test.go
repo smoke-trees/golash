@@ -82,5 +82,5 @@ func TestInRange3(t *testing.T) {
 		}
 	}()
 
-	InRange("s", 4.2, 6.9)
+	InRange("s", "f", "m")
 }
