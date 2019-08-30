@@ -12,11 +12,11 @@ type Befores struct {
 // passed function get invoked if the Call function on struct is called n or less times
 // Reset function resets the count
 func Before(f func(), n int) Befores {
-	if n>0 {
+	if n > 0 {
 		return Befores{
 			f, n, 0,
 		}
-	}
+	 }
 	return Befores{
 		f, 1, 0,
 	}
