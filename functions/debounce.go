@@ -24,7 +24,7 @@ func Debounce(f func(), t int) Debounced {
 }
 
 // Flush instantly invoke function
-func (d * Debounced) Flush(){
+func (d *Debounced) Flush() {
 	d.function()
 }
 

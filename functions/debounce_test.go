@@ -19,8 +19,9 @@ func TestDebounce(t *testing.T) {
 	df.Call()
 	time.Sleep(3 * time.Second)
 	df.Cancel()
+	df.Flush()
 	mux.Lock()
-	if i != 3 {
+	if i != 4 {
 		t.Log(i)
 		t.Fail()
 
