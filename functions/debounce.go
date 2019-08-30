@@ -23,6 +23,11 @@ func Debounce(f func(), t int) Debounced {
 	return debounced
 }
 
+// Flush instantly invoke function
+func (d * Debounced) Flush(){
+	d.function()
+}
+
 // Call the Debounce Method so that the function repeatedly call itself
 func (d *Debounced) Call() {
 	d.stop = false
