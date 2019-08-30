@@ -1,4 +1,4 @@
-package function
+package functions
 
 import "time"
 

@@ -1,4 +1,4 @@
-package function
+package functions
 
 import (
 	"testing"
@@ -16,7 +16,7 @@ func TestDebounce(t *testing.T) {
 	time.Sleep(3 * time.Second)
 	df.Cancel()
 	if i != 3 {
-		t.Fatalf("Error in Debounce %d", i)
+		t.Fail()
 	}
 }
 func increment(i *int) {
