@@ -21,7 +21,7 @@ func TestDebounce(t *testing.T) {
 	df.Cancel()
 	df.Flush()
 	mux.Lock()
-	if i == 4 || i==5{
+	if i == 4 || i == 5 {
 		mux.Unlock()
 		return
 	}
