@@ -10,10 +10,18 @@ func TestPad(t *testing.T) {
 	if ans := Pad("abc", 8, " "); ans != "  abc   " {
 		t.Fatalf("should truncate pad characters to fit the pad length")
 	}
+
+	if ans := Pad("abc", 8, "_-"); ans != "_-abc_-_" {
+		t.Fatalf("should truncate pad characters to fit the pad length. Got %v", ans)
+	}
 }
 
 func TestPad2(t *testing.T) {
-	if ans := Pad("abc", 8, "_-"); ans != "_-abc_-_" {
-		t.Fatalf("should truncate pad characters to fit the pad length. Got %v", ans)
+	if ans := Pad("abc", 0, " "); ans != "abc" {
+		t.Fatalf("It should pad a string to a given length. Got '%v'", ans)
+	}
+
+	if ans := Pad("abc", 4, ""); ans != "abc"{
+		t.Fatalf("It should pad a string to a given length. Got '%v'", ans)
 	}
 }
