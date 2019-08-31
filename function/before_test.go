@@ -1,4 +1,4 @@
-package functions
+package function
 
 import (
 	"testing"
@@ -21,6 +21,14 @@ func TestBefore(t *testing.T) {
 	}
 	t.Log(i)
 	if i != 4 {
+		t.Fail()
+	}
+
+	df = Before(h, -1)
+	for j := 0; j < 6; j++ {
+		df.Call()
+	}
+	if i != 5 {
 		t.Fail()
 	}
 }

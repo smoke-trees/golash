@@ -1,4 +1,4 @@
-package functions
+package function
 
 import (
 	"testing"
@@ -19,6 +19,14 @@ func TestAfter(t *testing.T) {
 		df.Call()
 	}
 	if i != 6 {
+		t.Fail()
+	}
+
+	df1 := After(h, 0)
+
+	df1.Call()
+
+	if i != 7 {
 		t.Fail()
 	}
 }

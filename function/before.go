@@ -1,4 +1,4 @@
-package functions
+package function
 
 // Befores struct for before functionality
 type Befores struct {
@@ -8,7 +8,7 @@ type Befores struct {
 }
 
 // Before Returns a Befores struct with a Call and Reset method.
-// Arguments to be passed :- function, n
+// Arguments to be passed :- function, n ( default value 1 for minimum 1 invocation)
 // passed function get invoked if the Call function on struct is called n or less times
 // Reset function resets the count
 func Before(f func(), n int) Befores {

@@ -1,4 +1,4 @@
-package functions
+package function
 
 // Afters struct for after functionality
 type Afters struct {
