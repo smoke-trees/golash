@@ -21,7 +21,7 @@ func TestPad2(t *testing.T) {
 		t.Fatalf("It should pad a string to a given length. Got '%v'", ans)
 	}
 
-	if ans := Pad("abc", 4, ""); ans != "abc"{
+	if ans := Pad("abc", 4, ""); ans != "abc" {
 		t.Fatalf("It should pad a string to a given length. Got '%v'", ans)
 	}
 }
