@@ -1,4 +1,4 @@
-package functions
+package function
 
 // Befores struct for before functionality
 type Befores struct {
