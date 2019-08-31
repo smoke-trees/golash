@@ -14,8 +14,24 @@ func TestDelay(t *testing.T) {
 	f := func() {
 		ch <- "hi"
 	}
-	Delay(f, 3000)
+	Delay(f, 2000)
 	time.Sleep(3 * time.Second)
+	select {
+	case h := <-ch:
+		{
+			if h != "hi" {
+				t.Logf("Recieved :%s", h)
+				t.Fail()
+			}
+		}
+	default:
+		t.Fail()
+	}
+	g := func() {
+		ch <- "hi"
+	}
+	Delay(g, 50)
+	time.Sleep(2 * time.Second)
 	select {
 	case h := <-ch:
 		{
