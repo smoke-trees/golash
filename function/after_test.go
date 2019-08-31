@@ -21,4 +21,12 @@ func TestAfter(t *testing.T) {
 	if i != 6 {
 		t.Fail()
 	}
+
+	df1 := After(h, 0)
+
+	df1.Call()
+
+	if i != 7 {
+		t.Fail()
+	}
 }
