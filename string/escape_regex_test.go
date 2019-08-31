@@ -6,7 +6,7 @@ func TestEscapeRegExp(t *testing.T) {
 	escaped := "\\^\\$\\.\\*\\+\\?\\(\\)\\[\\]\\{\\}\\|\\\\"
 	unescaped := "^$.*+?()[]{}|\\"
 
-	if EscapeRegExp(unescaped + unescaped) != escaped + escaped {
+	if EscapeRegExp(unescaped+unescaped) != escaped+escaped {
 		t.Fatalf("It should escape values")
 	}
 
