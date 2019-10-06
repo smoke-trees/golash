@@ -7,7 +7,7 @@ on:
     branches:
       - master
   schedule:
-    -cron: 0 10 * * 1
+    - cron: 0 10 * * 1
 jobs:
   test:
     name: Test
