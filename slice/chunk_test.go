@@ -21,4 +21,22 @@ func TestChunk(t *testing.T) {
 			t.Fatal("It should return the last chunk as remaining elements!")
 		}
 	}
+
+	if len(Chunk(make([]int, 0), 4)) != 0 {
+		t.Fatal("It should return an empty slice!")
+	}
+
+	if len(Chunk(arr, 0)) != 0 {
+		t.Fatal("It should return an empty slice!")
+	}
+}
+
+func TestChunkPanic(t *testing.T) {
+	defer func() {
+		if recover() == nil {
+			t.Fatal("It should panic upon receiving a type that isn't a slice")
+		}
+	}()
+
+	Chunk("random", 0)
 }
