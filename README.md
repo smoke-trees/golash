@@ -3,7 +3,7 @@
 * [Contribution guidelines](https://github.com/achhapolia10/golash/blob/master/CONTRIBUTING.md)
 * [Code of conduct](https://github.com/achhapolia10/golash/blob/master/CODE_OF_CONDUCT.md)
 
-[![Actions Status](https://github.com/achhapolia10/golash/workflows/CI/badge.svg)](https://github.com/achhapolia10/golash/actions)
+[![Actions Status](https://github.com/smoke-trees/golash/workflows/CI/badge.svg)](https://github.com/achhapolia10/golash/actions)
 [![codecov](https://codecov.io/gh/achhapolia10/golash/branch/master/graph/badge.svg)](https://codecov.io/gh/achhapolia10/golash/)
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 [![CodeFactor](https://www.codefactor.io/repository/github/smoke-trees/golash/badge)](https://www.codefactor.io/repository/github/smoke-trees/golash)
