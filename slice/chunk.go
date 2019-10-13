@@ -23,8 +23,8 @@ func Chunk(sl interface{}, size int) []interface{} {
 	result := make([]interface{}, int(math.Ceil(float64(l)/float64(size))))
 
 	for index < l {
-		if index + size < slice.Len() {
-			result[resIndex] = slice.Slice(index, index + size).Interface()
+		if index+size < slice.Len() {
+			result[resIndex] = slice.Slice(index, index+size).Interface()
 		} else {
 			result[resIndex] = slice.Slice(index, slice.Len()).Interface()
 		}
