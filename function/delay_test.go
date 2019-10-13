@@ -20,7 +20,7 @@ func TestDelay(t *testing.T) {
 	case h := <-ch:
 		{
 			if h != "hi" {
-				t.Logf("Recieved :%s", h)
+				t.Logf("Received :%s", h)
 				t.Fail()
 			}
 		}
@@ -36,7 +36,7 @@ func TestDelay(t *testing.T) {
 	case h := <-ch:
 		{
 			if h != "hi" {
-				t.Logf("Recieved :%s", h)
+				t.Logf("Received :%s", h)
 				t.Fail()
 			}
 		}
