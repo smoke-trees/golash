@@ -67,13 +67,13 @@ func toCamelInitCase(s string, initCase bool) string {
 	return n
 }
 
-// ToCamel converts a string to CamelCase if b is true, or lowerCamelCase if b is false
+// CamelCase converts a string to CamelCase if b is true, or lowerCamelCase if b is false
 func CamelCase(s string, b bool) string {
 	if b {
 		return toCamelInitCase(s, true)
-	} else {
-		return toLowerCamel(s)
 	}
+	return toLowerCamel(s)
+
 }
 
 // toLowerCamel converts a string to lowerCamelCase
@@ -81,8 +81,7 @@ func toLowerCamel(s string) string {
 	if s == "" {
 		return s
 	}
-	if r := rune(s[0]); r >= 'A' && r <= 'Z' {
-		s = strings.ToLower(string(r)) + s[1:]
-	}
+
+	s = strings.ToLower(string(r)) + s[1:]
 	return toCamelInitCase(s, false)
 }

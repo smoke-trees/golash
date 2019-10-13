@@ -5,6 +5,9 @@ import (
 	"reflect"
 )
 
+
+// InRange checks whether e is present in between n to s
+// Supported Types : int8, uint8, uint16, int16, uint32, int32, uint64, int64, int, uint, float32, float64
 func InRange(n, s, e interface{}) bool {
 	if reflect.TypeOf(n) != reflect.TypeOf(s) || reflect.TypeOf(n) != reflect.TypeOf(e) {
 		panic("All arguments must be of the same type!")

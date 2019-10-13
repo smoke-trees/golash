@@ -2,6 +2,8 @@ package number
 
 import "reflect"
 
+// Clamp clamps number within the inclusive lower and upper bounds.
+// Supported Types : int8, uint8, uint16, int16, uint32, int32, uint64, int64, int, uint, float32, float64
 func Clamp(n, l, u interface{}) interface{} {
 	if reflect.TypeOf(n) != reflect.TypeOf(l) || reflect.TypeOf(n) != reflect.TypeOf(u) {
 		panic("All arguments must be of the same type!")

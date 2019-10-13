@@ -1,5 +1,6 @@
 package string
 
+// StartsWith check if the string s starts with t
 func StartsWith(s, t string, p int) bool {
 	strLen := len(s)
 	if p < 0 {
