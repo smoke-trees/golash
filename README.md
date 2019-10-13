@@ -7,6 +7,7 @@
 [![codecov](https://codecov.io/gh/achhapolia10/golash/branch/master/graph/badge.svg)](https://codecov.io/gh/achhapolia10/golash/)
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 [![CodeFactor](https://www.codefactor.io/repository/github/smoke-trees/golash/badge)](https://www.codefactor.io/repository/github/smoke-trees/golash)
+[![Go Report Card](https://goreportcard.com/badge/github.com/smoke-trees/golash)](https://goreportcard.com/report/github.com/smoke-trees/golash)
 
 ### What is Golash?
 

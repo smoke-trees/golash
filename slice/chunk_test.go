@@ -10,14 +10,14 @@ func TestChunk(t *testing.T) {
 
 	for i, val := range Chunk(arr, 3) {
 		test := [][]int{{0, 1, 2}, {3, 4, 5}}
-		if !reflect.DeepEqual(val, test[i]){
+		if !reflect.DeepEqual(val, test[i]) {
 			t.Fatal("It should return chunked slices!")
 		}
 	}
 
 	for i, val := range Chunk(arr, 4) {
 		test := [][]int{{0, 1, 2, 3}, {4, 5}}
-		if !reflect.DeepEqual(val, test[i]){
+		if !reflect.DeepEqual(val, test[i]) {
 			t.Fatal("It should return the last chunk as remaining elements!")
 		}
 	}
