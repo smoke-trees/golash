@@ -37,24 +37,10 @@ func ToScreamingDelimited(s string, del uint8, screaming bool) string {
 		nextCaseIsChanged := false
 		if i+1 < len(s) {
 			next := s[i+1]
-			if (v >= 'A' && v <= 'Z' && next >= 'a' && next <= 'z') || (v >= 'a' && v <= 'z' && next >= 'A' && next <= 'Z') {
-				nextCaseIsChanged = true
-			}
+			nextCaseIsChanged = isNextCaseIsChanged(v, next, nextCaseIsChanged)
 		}
 
-		if i > 0 && n[len(n)-1] != del && nextCaseIsChanged {
-			// add underscore if next letter case type is changed
-			if v >= 'A' && v <= 'Z' {
-				n += string(del) + string(v)
-			} else if v >= 'a' && v <= 'z' {
-				n += string(v) + string(del)
-			}
-		} else if v == ' ' || v == '_' || v == '-' {
-			// replace spaces/underscores with delimiters
-			n += string(del)
-		} else {
-			n = n + string(v)
-		}
+		n = toDelimited(i, n, del, nextCaseIsChanged, v)
 	}
 
 	if screaming {
@@ -63,6 +49,35 @@ func ToScreamingDelimited(s string, del uint8, screaming bool) string {
 		n = strings.ToLower(n)
 	}
 	return n
+}
+
+func toDelimited(i int, n string, del uint8, nextCaseIsChanged bool, v int32) string {
+	if i > 0 && n[len(n)-1] != del && nextCaseIsChanged {
+		// add underscore if next letter case type is changed
+		n = addUnderScore(v, n, del)
+	} else if v == ' ' || v == '_' || v == '-' {
+		// replace spaces/underscores with delimiters
+		n += string(del)
+	} else {
+		n = n + string(v)
+	}
+	return n
+}
+
+func addUnderScore(v int32, n string, del uint8) string {
+	if v >= 'A' && v <= 'Z' {
+		n += string(del) + string(v)
+	} else if v >= 'a' && v <= 'z' {
+		n += string(v) + string(del)
+	}
+	return n
+}
+
+func isNextCaseIsChanged(v int32, next uint8, nextCaseIsChanged bool) bool {
+	if (v >= 'A' && v <= 'Z' && next >= 'a' && next <= 'z') || (v >= 'a' && v <= 'z' && next >= 'A' && next <= 'Z') {
+		nextCaseIsChanged = true
+	}
+	return nextCaseIsChanged
 }
 
 // ToDelimited converts a string to delimited.snake.case (in this case `del = '.'`)
