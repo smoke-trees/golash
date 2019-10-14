@@ -1,6 +1,6 @@
 package string
 
-// Checks if string ends with the given target string. If position specified is <= 0,
+// EndsWith checks if string ends with the given target string. If position specified is <= 0,
 // it will check until the end of the string
 func EndsWith(s, t string, pos int64) bool {
 	l := int64(len(s))

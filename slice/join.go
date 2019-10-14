@@ -5,6 +5,7 @@ import (
 	"reflect"
 )
 
+// Join converts all elements in array into a string separated by separator.
 func Join(sl interface{}, s string) string {
 	slice, success := takeArg(sl, reflect.Slice)
 	if !success {

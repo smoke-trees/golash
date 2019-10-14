@@ -61,6 +61,7 @@ var deburredLetters = map[string]string{
 	"\u0149": "'n", "\u017f": "s",
 }
 
+// Deburr removes diacritics from the string for e.g. Ã converts to A
 func Deburr(toReplace string) string {
 	reLatin := regexp.MustCompile(`[\xc0-\xd6\xd8-\xf6\xf8-\xffĀ-ſ]`)
 	reComboMark := regexp.MustCompile(`[̀-ͯ︠-︯⃐-⃿᪰-᫿᷀-᷿]`)

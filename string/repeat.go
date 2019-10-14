@@ -2,6 +2,7 @@ package string
 
 import "math"
 
+// Repeat repeats the given string n times.
 func Repeat(s string, n int64) string {
 	result := ""
 	if n < 1 || n > math.MaxInt64 {
