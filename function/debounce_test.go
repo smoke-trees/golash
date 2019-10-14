@@ -30,5 +30,5 @@ func TestDebounce(t *testing.T) {
 	mux.Unlock()
 }
 func increment(i *int) {
-	*i ++
+	*i++
 }
