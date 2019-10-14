@@ -15,7 +15,7 @@ func TestDebounce(t *testing.T) {
 		increment(&i)
 		mux.Unlock()
 	}
-	df := Debounce(h, 1000)
+	df := Debounce(h, 1*time.Second)
 	df.Call()
 	time.Sleep(3 * time.Second)
 	df.Cancel()
@@ -31,4 +31,14 @@ func TestDebounce(t *testing.T) {
 }
 func increment(i *int) {
 	*i++
+}
+
+func TestDebouncePanic(t *testing.T) {
+	defer func() {
+		if recover() == nil {
+			t.Fail()
+		}
+	}()
+
+	_ = Debounce(func() {}, 1*time.Nanosecond)
 }
