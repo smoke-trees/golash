@@ -9,7 +9,7 @@ type Afters struct {
 
 // After Returns a Afters struct with a Call and Reset method.
 // Arguments to be passed :- function, n
-// passed function get invoked if the Call function on struct is called n or more times
+// passed function gets invoked if the Call function on struct is called n or more times
 // Reset function resets the count
 func After(f func(), n int) Afters {
 	if n > 0 {

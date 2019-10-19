@@ -1,13 +1,13 @@
 package function
 
-// Counter use Counter.Call() method to Run the passed function in Times 1 time
+// Counter uses the Counter.Call() function to invoke f once
 type Counter struct {
 	f     func(int)
 	n     int
 	count int
 }
 
-// Times Returns a Counter struct with a Call Method to invoke Calling of the method
+// Times Returns a Counter struct with a Call function that invokes Counter.f
 func Times(f func(int), n int) Counter {
 	c := Counter{
 		f:     f,
@@ -17,7 +17,7 @@ func Times(f func(int), n int) Counter {
 	return c
 }
 
-// Call the function in time 1 time
+// Invoke Counter.f once
 func (c *Counter) Call() {
 	go func() {
 		for c.count < c.n {
