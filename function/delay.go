@@ -2,13 +2,15 @@ package function
 
 import "time"
 
-// Delay invokes the function f after w milliseconds
-func Delay(f func(), w int64) {
-	if w < 100 {
-		w = 100
+// Delay invokes the function f after t milliseconds
+func Delay(f func(), t time.Duration) {
+
+	if t < time.Millisecond*1 {
+		panic("minimum value of t must be 1 millisecond")
 	}
+
 	go func() {
-		time.Sleep(time.Duration(w * int64(time.Millisecond)))
+		time.Sleep(t)
 		f()
 	}()
 }
