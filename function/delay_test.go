@@ -44,3 +44,18 @@ func TestDelay(t *testing.T) {
 		t.Fail()
 	}
 }
+
+func TestDelayPanic(t *testing.T) {
+	defer func() {
+		if recover() == nil {
+			t.Fatal("It should panic upon receiving time less than 1 millisecond")
+		}
+	}()
+
+	ch := make(chan string)
+
+	f := func() {
+		ch <- "hi"
+	}
+	Delay(f, 1 * time.Nanosecond)
+}
