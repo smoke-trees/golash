@@ -14,7 +14,7 @@ func TestDelay(t *testing.T) {
 	f := func() {
 		ch <- "hi"
 	}
-	Delay(f, 2000)
+	Delay(f, 2000 * time.Millisecond)
 	time.Sleep(3 * time.Second)
 	select {
 	case h := <-ch:
@@ -30,7 +30,7 @@ func TestDelay(t *testing.T) {
 	g := func() {
 		ch <- "hi"
 	}
-	Delay(g, 50)
+	Delay(g, 50*time.Millisecond)
 	time.Sleep(2 * time.Second)
 	select {
 	case h := <-ch:
