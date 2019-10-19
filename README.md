@@ -6,6 +6,7 @@
 [![Actions Status](https://github.com/smoke-trees/golash/workflows/CI/badge.svg)](https://github.com/achhapolia10/golash/actions)
 [![codecov](https://codecov.io/gh/achhapolia10/golash/branch/master/graph/badge.svg)](https://codecov.io/gh/achhapolia10/golash/)
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
+[![Documentation](https://godoc.org/github.com/smoke-trees/golash?status.svg)](https://godoc.org/github.com/smoke-trees/golash)
 [![CodeFactor](https://www.codefactor.io/repository/github/smoke-trees/golash/badge)](https://www.codefactor.io/repository/github/smoke-trees/golash)
 [![Go Report Card](https://goreportcard.com/badge/github.com/smoke-trees/golash)](https://goreportcard.com/report/github.com/smoke-trees/golash)
 
